@@ -1,0 +1,73 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<!doctype html>
+<html lang="en" ng-app="ajsspa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>[Single Page App - change in index.html]</title>
+
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700,800' rel='stylesheet' type='text/css'>
+<link href='semantic-ui/css/semantic.min.css' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+/* CSS Reset */
+* { 
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+}
+/* CSS Reset */
+
+body {
+	font-smooth: always;
+	font-family: 'Open Sans';
+	font-size: 12pt;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	background-color: ${symbol_pound}fafafa;
+}
+
+/* Semantic-UI overrides */
+/* messages will be hidden by Angular, not Semantic */
+.ui.form .warning.message {
+	display: block;
+}
+
+
+</style>
+
+<script src="js/libs/jquery-1.11.0.min.js"></script>
+<script src="js/libs/jquery-ui-1.10.3.min.js"></script>
+
+
+<script src="js/libs/angular.js"></script>
+<script src="js/libs/angular-resource.js"></script>
+<script src="js/libs/angular-sanitize.min.js"></script>
+
+<script src="semantic-ui/javascript/semantic.min.js"></script>
+
+<script	src="js/libs/angular-localstorage.js"></script>
+<script	src="js/libs/angular-ui-router-v0.2.0-dev-2013-11-22.js"></script>
+<script src="js/libs/sockjs-0.3.4.js"></script>
+
+<script src="js/libs/md5-service.js"></script>
+<script src="js/libs/gravatar-directive.js"></script>
+
+<script src="js/libs/qrcode.js"></script>
+
+<script src="js/services.js"></script>
+<script src="js/application.js"></script>
+<script src="js/controllers/application_controller.js"></script>
+</head>
+
+<body>
+	<div ui-view="applicationview"></div>
+</body>
+</html>

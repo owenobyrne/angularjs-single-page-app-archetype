@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>${groupId}</groupId>
+	<artifactId>${artifactId}</artifactId>
+	<packaging>war</packaging>
+	<version>${version}</version>
+	<name>${artifactId} Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	
+		<properties>
+			<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		</properties>
+	
+		<build>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+					<warName>${project.artifactId}</warName>
+					<webResources>
+						<resource>
+							<!-- this is relative to the pom.xml directory -->
+							<directory>src/main/html</directory>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+
+			<!-- Maven Tomcat Plugin -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<version>1.1</version>
+				<configuration>
+					<url>http://payb.in/manager/text</url>
+					<server>TomcatServerOnMiller</server>
+					<warFile>${project.build.directory}/${project.artifactId}.war</warFile>
+					<path>/${project.artifactId}</path>
+				</configuration>
+			</plugin>
+
+		</plugins>
+
+	</build>
+</project>
